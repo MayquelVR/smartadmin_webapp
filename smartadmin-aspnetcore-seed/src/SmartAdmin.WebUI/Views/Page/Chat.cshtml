@@ -1,0 +1,226 @@
+﻿@{
+    ViewData["Title"] = "Chat";
+    ViewData["PageName"] = "page_chat";
+    ViewData["Category1"] = "Page Views";
+}
+
+@section Header {
+}
+
+@section PageHeading {
+    <div class="subheader">
+        <h1 class="subheader-title">
+            <i class="subheader-icon fal fa-plus-circle"></i> Chat
+            <small>
+                A robust and simple chat component that is flexible, intuitive, easy to use and customize
+            </small>
+        </h1>
+    </div>
+}
+
+<div class="d-flex flex-grow-1 p-0 border-faded shadow-4" style="max-height:800px;">
+
+    <!-- left slider -->
+    <div id="js-chat-contact" class="flex-wrap position-relative slide-on-mobile slide-on-mobile-left border-faded border-left-0 border-top-0 border-bottom-0">
+        <!-- BEGIN msgr-list -->
+        <div class="d-flex flex-column bg-faded position-absolute pos-top pos-bottom w-100">
+            <div class="px-3 py-4">
+                <input type="text" class="form-control bg-white" placeholder="Search key words">
+            </div>
+            <div class="flex-1 h-100 custom-scrollbar">
+                <div class="w-100">
+                    <div class="nav-title m-0 px-3 text-muted">Chat History</div>
+                    <ul class="list-unstyled m-0">
+                        <li>
+                            <div class="d-flex w-100 px-3 py-2 text-dark hover-white cursor-pointer show-child-on-hover">
+                                <div class="profile-image-md rounded-circle" style="background-image:url('/img/demo/avatars/avatar-d.png'); background-size: cover;"></div>
+                                <div class="px-2 flex-1">
+                                    <div class="text-truncate text-truncate-md">
+                                        Tracey Chang
+                                        <small class="d-block text-muted text-truncate text-truncate-md">
+                                            2020-01-31
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="position-absolute pos-right mt-2 mr-3 show-on-hover-parent">
+                                    <button class="btn btn-danger btn-xs btn-icon rounded-circle shadow-0" data-toggle="tooltip" data-template="<div class=&quot;tooltip&quot; role=&quot;tooltip&quot;><div class=&quot;tooltip-inner bg-danger-500&quot;></div></div>" data-original-title="Delete">
+                                        <i class="fal fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="d-flex w-100 px-3 py-2 text-dark hover-white cursor-pointer show-child-on-hover">
+                                <div class="profile-image-md rounded-circle" style="background-image:url('/img/demo/avatars/avatar-b.png'); background-size: cover;"></div>
+                                <div class="px-2 flex-1">
+                                    <div class="text-truncate text-truncate-md">
+                                        Oliver Kopyuv
+                                        <small class="d-block text-muted text-truncate text-truncate-md">
+                                            2019-03-15
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="position-absolute pos-right mt-2 mr-3 show-on-hover-parent">
+                                    <button class="btn btn-danger btn-xs btn-icon rounded-circle shadow-0" data-toggle="tooltip" data-template="<div class=&quot;tooltip&quot; role=&quot;tooltip&quot;><div class=&quot;tooltip-inner bg-danger-500&quot;></div></div>" data-original-title="Delete">
+                                        <i class="fal fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="d-flex w-100 px-3 py-2 text-dark hover-white cursor-pointer show-child-on-hover">
+                                <div class="profile-image-md rounded-circle" style="background-image:url('/img/demo/avatars/avatar-e.png'); background-size: cover;"></div>
+                                <div class="px-2 flex-1">
+                                    <div class="text-truncate text-truncate-md">
+                                        Dr. John Cook PhD
+                                        <small class="d-block text-muted text-truncate text-truncate-md">
+                                            2023-05-27
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="position-absolute pos-right mt-2 mr-3 show-on-hover-parent">
+                                    <button class="btn btn-danger btn-xs btn-icon rounded-circle shadow-0" data-toggle="tooltip" data-template="<div class=&quot;tooltip&quot; role=&quot;tooltip&quot;><div class=&quot;tooltip-inner bg-danger-500&quot;></div></div>" data-original-title="Delete">
+                                        <i class="fal fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="d-flex w-100 px-3 py-2 text-dark hover-white cursor-pointer show-child-on-hover">
+                                <div class="profile-image-md rounded-circle" style="background-image:url('/img/demo/avatars/avatar-g.png'); background-size: cover;"></div>
+                                <div class="px-2 flex-1">
+                                    <div class="text-truncate text-truncate-md">
+                                        Ali Amdaney
+                                        <small class="d-block text-muted text-truncate text-truncate-md">
+                                            2023-06-11
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="position-absolute pos-right mt-2 mr-3 show-on-hover-parent">
+                                    <button class="btn btn-danger btn-xs btn-icon rounded-circle shadow-0" data-toggle="tooltip" data-template="<div class=&quot;tooltip&quot; role=&quot;tooltip&quot;><div class=&quot;tooltip-inner bg-danger-500&quot;></div></div>" data-original-title="Delete">
+                                        <i class="fal fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="nav-title px-3 text-muted">Missed calls</div>
+
+                    <ul class="list-unstyled m-0">
+                        <li>
+                            <div class="d-flex w-100 px-3 py-2 text-dark hover-white cursor-pointer show-child-on-hover">
+                                <div class="profile-image-md rounded-circle" style="background-image:url('/img/demo/avatars/avatar-m.png'); background-size: cover;"></div>
+                                <div class="px-2 flex-1">
+                                    <div class="text-truncate text-truncate-md">
+                                        +714651347790
+                                        <small class="d-block font-italic fs-xs opacity-50">
+                                            Missed Call
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="position-absolute pos-right mt-2 mr-3 show-on-hover-parent">
+                                    <button class="btn btn-success btn-xs btn-icon rounded-circle shadow-0" data-toggle="tooltip" data-template="<div class=&quot;tooltip&quot; role=&quot;tooltip&quot;><div class=&quot;tooltip-inner bg-success-500&quot;></div></div>" data-original-title="Play voicemail">
+                                        <i class="fal fa-play"></i>
+                                    </button>
+                                    <button class="btn btn-info btn-xs btn-icon rounded-circle shadow-0" data-toggle="tooltip" data-template="<div class=&quot;tooltip&quot; role=&quot;tooltip&quot;><div class=&quot;tooltip-inner bg-info-500&quot;></div></div>" data-original-title="Call back">
+                                        <i class="fal fa-phone"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="d-flex w-100 px-3 py-2 text-dark hover-white cursor-pointer show-child-on-hover">
+                                <div class="profile-image-md rounded-circle" style="background-image:url('/img/demo/avatars/avatar-m.png'); background-size: cover;"></div>
+                                <div class="px-2 flex-1">
+                                    <div class="text-truncate text-truncate-md">
+                                        +13471349199
+                                        <small class="d-block font-italic fs-xs opacity-50">
+                                            Ended in 32 minutes
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="position-absolute pos-right mt-2 mr-3 show-on-hover-parent">
+                                    <button class="btn btn-info btn-xs btn-icon rounded-circle shadow-0" data-toggle="tooltip" data-template="<div class=&quot;tooltip&quot; role=&quot;tooltip&quot;><div class=&quot;tooltip-inner bg-info-500&quot;></div></div>" data-original-title="Call back">
+                                        <i class="fal fa-phone"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <!-- END msgr-list -->
+    </div>
+
+    <div class="slide-backdrop" data-action="toggle" data-class="slide-on-mobile-left-show" data-target="#js-chat-contact"></div>
+    <!-- end left slider -->
+    <!-- inbox container -->
+    <div class="d-flex flex-column flex-grow-1 bg-white">
+        <!-- inbox header -->
+        <div class="flex-grow-0">
+            <!-- inbox title -->
+            <div class="d-flex align-items-center p-0 border-faded border-top-0 border-left-0 border-right-0 flex-shrink-0">
+                <div class="d-flex align-items-center w-100 pl-3 px-lg-4 py-2 position-relative">
+                    <div class="d-flex flex-row align-items-center mt-1 mb-1">
+                        <div class="mr-2 d-inline-block">
+                            <span class="rounded-circle profile-image d-block" style="background-image:url('/img/demo/avatars/avatar-b.png'); background-size: cover;"></span>
+                        </div>
+                        <div class="info-card-text">
+                            <a href="javascript:void(0);" class="fs-lg text-truncate text-truncate-lg" data-toggle="dropdown" aria-expanded="false">
+                                Oliver Kopyov
+                                <i class="fal fa-angle-down d-inline-block ml-1 fs-md"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item px-3 py-2" href="#">Send Email</a>
+                                <a class="dropdown-item px-3 py-2" href="#">Create Appointment</a>
+                                <a class="dropdown-item px-3 py-2" href="#">Block User</a>
+                            </div>
+                            <span class="text-truncate text-truncate-md opacity-80">Online Strategist</span>
+                        </div>
+                    </div>
+                    <div class="ml-auto">
+                        <a href="javascript:void(0);" data-toggle="button" class="btn btn-outline-danger btn-icon rounded-circle">
+                            <i class="fal fa-volume-mute fs-md"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="btn btn-outline-info btn-icon rounded-circle ml-1">
+                            <i class="fal fa-phone fs-md"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="btn btn-outline-info btn-icon rounded-circle ml-1">
+                            <i class="fal fa-video fs-md"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- button for mobile -->
+                <a href="javascript:void(0);" class="px-3 py-2 d-flex d-lg-none align-items-center justify-content-center mr-2 btn" data-action="toggle" data-class="slide-on-mobile-left-show" data-target="#js-chat-contact">
+                    <i class="fal fa-ellipsis-v h1 mb-0 "></i>
+                </a>
+                <!-- end button for mobile -->
+            </div>
+            <!-- end inbox title -->
+        </div>
+        <!-- end inbox header -->
+        <!-- inbox message -->
+        <div class="flex-wrap align-items-center flex-grow-1 position-relative bg-gray-50">
+            <div class="position-absolute pos-top pos-bottom w-100 overflow-hidden">
+                <div class="d-flex h-100 flex-column">
+                    <!-- message list (the part that scrolls) -->
+                    <partial name="_TabMessenger" />
+                    <!-- end message list -->
+                </div>
+            </div>
+        </div>
+        <!-- end inbox message -->
+    </div>
+    <!-- end inbox container -->
+
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        // push settings with "false" save to local
+        initApp.pushSettings("layout-composed-mobile", false);
+    </script>
+}

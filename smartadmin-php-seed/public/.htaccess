@@ -1,0 +1,132 @@
+# Force the latest IE version, in various cases when it may fall back to IE7 mode
+<IfModule mod_setenvif.c>
+	<IfModule mod_headers.c>
+		BrowserMatch MSIE ie
+		Header set X-UA-Compatible "IE=Edge,chrome=1" env=ie
+	</IfModule>
+</IfModule>
+
+
+# Serve cross-domain ajax requests
+#<IfModule mod_headers.c>
+#	Header set Access-Control-Allow-Origin "*"
+#</IfModule>
+
+# security scans
+<ifModule mod_headers.c>
+	Header set X-XSS-Protection "1; mode=block"
+	Header always append X-Frame-Options SAMEORIGIN
+	Header set X-Content-Type-Options: "nosniff"
+	Header always edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure
+</ifModule>
+
+# HTC Files (for IE hacks)
+#AddType text/x-component       .htc
+
+
+# Favicon
+#AddType image/x-icon           .ico
+
+
+# HTML5 video formats
+AddType video/ogg               .ogg .ogv
+AddType video/mp4               .mp4
+AddType video/webm              .webm
+
+
+# Proper svg serving for svg webfonts on iPad
+AddType image/svg+xml           .svg .svgz
+
+
+# Webfont formats
+AddType application/vnd.ms-fontobject eot
+AddType font/ttf                .ttf
+AddType font/otf                .otf
+AddType font/x-woff             .woff
+AddType font/woff2  			.woff2
+
+
+# HTML5 storage
+AddType text/cache-manifest     .manifest
+
+# Gzip compression
+<IfModule mod_deflate.c>
+	# html, xml, css, and js
+	AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/x-javascript text/javascript application/javascript application/json text/js
+
+	# webfonts
+	<FilesMatch "\.(ttf|otf|eot|svg)$" >
+		SetOutputFilter DEFLATE
+	</FilesMatch>
+</IfModule>
+
+# Far-Future Expires Headers (UNCOMMENT WHEN YOU GO LIVE)
+<IfModule mod_expires.c>
+	Header set cache-control: public
+	ExpiresActive on
+
+	# General whitelist expires rules
+	ExpiresDefault                          "access plus 1 month"
+
+	# cache.manifest needs re-reqeusts in FF 3.6
+	ExpiresByType text/cache-manifest       "access plus 0 seconds"
+
+	# Document HTML
+	ExpiresByType text/html                 "access"
+
+	# RSS feed
+	ExpiresByType application/rss+xml       "access plus 1 hour"
+
+	# Favicon (cannot be renamed)
+	ExpiresByType image/vnd.microsoft.icon  "access plus 1 week"
+
+	# Media: images, video, audio
+	ExpiresByType image/png                 "access plus 1 month"
+	ExpiresByType image/jpg                 "access plus 1 month"
+	ExpiresByType image/jpeg                "access plus 1 month"
+	ExpiresByType video/ogg                 "access plus 1 month"
+	ExpiresByType audio/ogg                 "access plus 1 month"
+	ExpiresByType video/mp4                 "access plus 1 month"
+
+	# Webfonts
+	ExpiresByType font/ttf                  "access plus 1 month"
+	ExpiresByType font/woff                 "access plus 1 month"
+	ExpiresByType image/svg+xml             "access plus 1 month"
+
+	# CSS and Javascript
+	ExpiresByType text/css                  "access plus 1 week"
+	ExpiresByType application/javascript    "access plus 1 week"
+	ExpiresByType text/javascript           "access plus 1 week"
+</IfModule>
+
+
+# Entity tags (ETags) aren't needed for static content
+FileETag None
+
+# Custom 404 page
+# ErrorDocument 404 404.php
+
+# UTF-8 encoding for anything served text/plain or text/html
+AddDefaultCharset utf-8
+
+# Force UTF-8 for certain file formats
+AddCharset utf-8 .html .css .js .xml .json .rss
+
+RewriteEngine On
+
+# Block users from browsing folders
+Options -Indexes
+IndexIgnore *
+
+# 404 some directories
+RewriteRule ^includes/ - [L,R=404]
+
+# Uncomment if you're not using the public folder
+# RewriteRule ^vendor/ - [L,R=404]
+# RewriteRule ^tmp/ - [L,R=404]
+# RewriteRule ^.git/ - [L,R=404]
+# RewriteRule ^\.gitignore|.*\.md|composer.json|composer.lock|\.sql$ - [L,R=404]
+
+### general
+RewriteRule ^api/? api/index.php [QSA,L]
+RewriteRule ^dl/([\w-]+)/?$ dl.php?token=$1 [QSA,L]
